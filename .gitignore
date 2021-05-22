@@ -1,3 +1,10 @@
+# ripspot files
+
+credentials.json
+*.mp3
+riptemp/
+.cache
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
