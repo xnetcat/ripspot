@@ -27,7 +27,10 @@ except FileNotFoundError:
     print("install ffmpeg", file=sys.stderr)
     sys.exit(1)
 
-parser = argparse.ArgumentParser(prog="ripspot")
+parser = argparse.ArgumentParser(
+    description="Simple spotify ripper, that converts downloaded songs to mp3 and tags them with spotify metadata",
+    prog="ripspot",
+)
 parser.add_argument("url", type=str, nargs="+", help="URL to a song/album/playlist")
 parser.add_argument("-u", "--username", help="Your spotify username", required=True)
 parser.add_argument("-p", "--password", help="Your spotify password", required=True)
@@ -68,13 +71,17 @@ for request in arguments.url:
 
         while playlist:
             playlist_tracks = playlist.get("tracks")
-            
+
             if playlist_tracks is not None:
-                playlist_tracks=  playlist_tracks.get("items")
+                playlist_tracks = playlist_tracks.get("items")
 
                 if len(playlist_tracks) > 0:
                     tracks.extend(
-                        [track["track"] for track in playlist_tracks if "track" in track]
+                        [
+                            track["track"]
+                            for track in playlist_tracks
+                            if "track" in track
+                        ]
                     )
 
                 if playlist["tracks"]["next"]:
@@ -88,7 +95,7 @@ for request in arguments.url:
 
         while album:
             album_tracks = album.get("tracks")
-            
+
             if album_tracks is not None:
                 album_tracks = album_tracks.get("items")
 
