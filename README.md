@@ -9,6 +9,7 @@ Spotify ripper
 
 - librespot-python - `pip install git+https://github.com/kokarare1212/librespot-python`
 - spotipy - `pip install spotipy`
+- mutagen - `pip install mutagen`
 
 # How to run
 
