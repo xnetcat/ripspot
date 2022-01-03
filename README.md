@@ -1,6 +1,9 @@
 # ripspot
 Spotify ripper
 
+## This repository is only for educational purpose
+It probably no longer works, but I don't care.
+
 # Prerequisites
 
 - Python
